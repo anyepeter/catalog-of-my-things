@@ -1,11 +1,15 @@
 require_relative 'item'
 class Movie < Item
-    def initialize(genre, author, source, label, publish_data, publisher)
-        super(genre, author, source, label, publish_data)
-        @silet = publisher
+    def initialize(publish_data, silent)
+        super(publish_data)
+        @silent = silent
     end
 
     def can_be_archived?
-        
+        if super || @silent = true
+            true
+            else
+                false
+            end
     end
 end
