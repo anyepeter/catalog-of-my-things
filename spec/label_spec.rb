@@ -4,7 +4,7 @@ require_relative '../app/item'
 describe Label do 
      before (:all) do
         @label = Label.new('Rapper', 'red')
-        @item = Item.new(Date.new(2000,10,10))
+        @item = Item.new(Date.parse('10-10-2000'))
      end
 
      context 'testing the label class' do 

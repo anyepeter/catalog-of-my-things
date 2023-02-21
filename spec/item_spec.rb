@@ -3,7 +3,7 @@ require_relative '../app/item'
 describe Item do
 
     before (:all) do
-        @item = Item.new(Date.new(2000,10,10))
+        @item = Item.new(Date.parse('31-12-2010'))
     end
       context 'testing the item class' do
         
