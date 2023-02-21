@@ -1,17 +1,24 @@
 require_relative '../app/genre'
-require_relative '../app/item'
 
-describe Genre do 
-    before (:all) do 
-        @genre = Genre.new('Bash')
-        @item = Item.new(Date.new(2000,10,10))
+describe Genre do
+    let(:genre) { Genre.new("Hip-Hop") }
+    let(:item1) { double("item") }
+    let(:item2) { double("item") }
+  
+    describe "#initialize" do
+      it "creates a new author object with the correct attributes" do
+        expect(genre.name).to eq("Hip-Hop")
+        expect(genre.items).to eq([])
+      end
     end
-context 'Testing the genre class' do 
-     
-    it 'It should return 1 after passing the name of the genre' do
-        expect(@genre.items.length).to eql 0
-        @item.genre(@genre)
-        expect(@genre.items.length).to eql 1
+  
+    describe "#add_item" do
+      it "adds a new item to the author's items array" do
+        genre.add_item(item1)
+        genre.add_item(item2)
+        expect(genre.items.length).to eq(2)
+        expect(genre.items).to include(item1)
+        expect(genre.items).to include(item2)
+      end
     end
-end
-end
+  end
