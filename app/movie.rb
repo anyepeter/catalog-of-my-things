@@ -1,7 +1,9 @@
 require_relative 'item'
 class Movie < Item
-    def initialize(publish_date, silent)
+    attr_accessor :publish_data, :silent, :name
+    def initialize(name, publish_date, silent)
         super(publish_date)
+        @name = name
         @silent = silent
     end
 
