@@ -1,11 +1,12 @@
 require_relative 'item'
 
-class MusicAlbum < Item
-    attr_accessor :on_spotify
+class Music_album < Item
+    attr_accessor :on_spotify, :title
 
-    def initialize(publish_data, on_spotify)
+    def initialize(title, publish_data, on_spotify)
         super(publish_data)
         @on_spotify = on_spotify
+        @title = title
     end
 
     def can_be_archived?
