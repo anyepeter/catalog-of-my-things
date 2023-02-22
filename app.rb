@@ -104,7 +104,7 @@ class App
     title = gets.chomp
     print 'Enter color'
     color = gets.chomp
-    print 'Publish date:'
+    print 'Publish date(0000-00-00):'
     date = gets.chomp.to_s
     print 'On spotify?(Y/N):'
     spotify = gets.chomp
@@ -130,7 +130,7 @@ class App
   def add_movies
     print 'Name of movie:'
     name = gets.chomp
-    print 'Publish date:'
+    print 'Publish date(0000-00-00):'
     publish_date = gets.chomp.to_s
     print 'Silent?(Y/N):'
     result = gets.chomp
@@ -154,15 +154,15 @@ class App
   end
 
   def add_game
-    puts 'Game name:'
+    print 'Game name:'
     name = gets.chomp
-    puts 'Game source:'
+    print 'Game source:'
     g_source = gets.chomp
-    puts 'Game publish date(0000-00-00):'
+    print 'Game publish date(0000-00-00):'
     publish_date = gets.chomp.to_s
-    puts 'multiplayer game:'
+    print 'multiplayer game:'
     multiplayer = gets.chomp
-    puts 'Game lastly played on(0000-00-00):'
+    print 'Game lastly played on(0000-00-00):'
     last_played_at = gets.chomp.to_s
     @game << Game.new(name, publish_date, multiplayer, last_played_at)
     @source << Source.new(g_source)

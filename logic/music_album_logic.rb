@@ -17,7 +17,7 @@ module MusicLogic
   def load_music_album
     music = []
     JSON.parse(File.read('./save_data/music_album.json')).each do |item|
-      music.push(Music_album.new(item['title'], item['publish_date'], item['on_spotify']))
+      music.push(MusicAlbum.new(item['title'], item['publish_date'], item['on_spotify']))
     end
     music
   end
