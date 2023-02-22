@@ -2,9 +2,9 @@ require_relative '../app/movie'
 
 describe Movie do
   before(:all) do
-    @movie1 = Movie.new(Date.parse('11-11-2020'), true)
-    @movie2 = Movie.new(Date.parse('11-11-2000'), false)
-    @movie3 = Movie.new(Date.parse('11-11-2023'), false)
+    @movie1 = Movie.new('ruby',Date.parse('11-11-2020'), true)
+    @movie2 = Movie.new('java', Date.parse('11-11-2000'), false)
+    @movie3 = Movie.new('sql',Date.parse('11-11-2023'), false)
   end
 
   describe '#initialize' do
