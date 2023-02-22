@@ -1,7 +1,7 @@
 require_relative '../app/book'
 
 describe Book do
-  let(:book) {Book.new('ruby', Date.parse('11-11-2010'), 'Mike Smith', 'Good') }
+  let(:book) { Book.new('ruby', Date.parse('11-11-2010'), 'Mike Smith', 'Good') }
 
   describe '#initialize' do
     it 'returns true if the book can be archived' do

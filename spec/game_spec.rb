@@ -2,7 +2,7 @@ require_relative '../app/game'
 
 describe Game do
   before(:all) do
-    @game1 = Game.new( 'Minecraft', Date.parse('11-11-2000'), true, Date.parse('11-11-2010'))
+    @game1 = Game.new('Minecraft', Date.parse('11-11-2000'), true, Date.parse('11-11-2010'))
     @game2 = Game.new('call of duty', Date.parse('11-11-2000'), true, Date.parse('11-11-2022'))
     @game3 = Game.new('call of duty2', Date.parse('11-11-2023'), true, Date.parse('11-11-2020'))
   end
