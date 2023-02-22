@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../app/source'
 
 describe Source do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './app_require'
 
 class HelperApp
@@ -9,8 +11,6 @@ class HelperApp
   include MovieLogic
   include SourceLogic
   include MusicLogic
-
-
 
   def save_data
     save_books

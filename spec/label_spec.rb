@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../app/label'
 require_relative '../app/item'
 

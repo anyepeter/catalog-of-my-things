@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './app/book'
 require_relative './app/author'
 require_relative './app/label'
