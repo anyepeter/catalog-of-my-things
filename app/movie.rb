@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'item'
 class Movie < Item
   attr_accessor :publish_data, :silent, :name

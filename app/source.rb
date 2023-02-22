@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Source
   attr_accessor :name, :items
 
