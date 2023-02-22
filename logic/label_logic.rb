@@ -15,8 +15,12 @@ module LabelLogic
 
   def load_label
     label = []
-    JSON.parse(File.read('./save_data/label.json')).each do |item|
-      label.push(Label.new(item['title'], item['color']))
+    if File.empty?('./save_data/label.json')
+      File.write('./save_data/label.json', [])
+    else
+      JSON.parse(File.read('./save_data/label.json')).each do |item|
+        label.push(Label.new(item['title'], item['color']))
+      end
     end
     label
   end

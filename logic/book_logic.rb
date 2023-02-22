@@ -17,8 +17,12 @@ module BookLogic
 
   def load_books
     books = []
-    JSON.parse(File.read('./save_data/books.json')).each do |book|
-      books.push(Book.new(book['title'], book['publish_date'], book['publisher'], book['cover_state']))
+    if File.empty?('./save_data/books.json')
+      File.write('./save_data/books.json', [])
+    else
+      JSON.parse(File.read('./save_data/books.json')).each do |book|
+        books.push(Book.new(book['title'], book['publish_date'], book['publisher'], book['cover_state']))
+      end
     end
     books
   end

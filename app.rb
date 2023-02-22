@@ -13,8 +13,6 @@ class App < HelperApp
     @game = load_games
   end
 
-  def publish_date; end
-
   def create_book
     print 'Title: '
     title = gets.chomp

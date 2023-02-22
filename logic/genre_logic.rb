@@ -12,8 +12,12 @@ module GenreLogic
 
   def load_genre
     genre = []
-    JSON.parse(File.read('./save_data/genres.json')).each do |item|
-      genre.push(Genre.new(item['name']))
+    if File.empty?('./save_data/genres.json')
+      File.write('./save_data/genres.json', [])
+    else
+      JSON.parse(File.read('./save_data/genres.json')).each do |item|
+        genre.push(Genre.new(item['name']))
+      end
     end
     genre
   end

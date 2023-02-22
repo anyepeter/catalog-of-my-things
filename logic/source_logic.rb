@@ -12,8 +12,12 @@ module SourceLogic
 
   def load_sources
     source = []
-    JSON.parse(File.read('./save_data/source.json')).each do |item|
-      source.push(Source.new(item['name']))
+    if File.empty?('./save_data/source.json')
+      File.write('./save_data/source.json', [])
+    else
+      JSON.parse(File.read('./save_data/source.json')).each do |item|
+        source.push(Source.new(item['name']))
+      end
     end
     source
   end

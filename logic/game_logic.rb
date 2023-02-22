@@ -17,8 +17,12 @@ module GameLogic
 
   def load_games
     gamess = []
-    JSON.parse(File.read('./save_data/game.json')).each do |item|
-      gamess.push(Game.new(item['name'], item['publish_date'], item['multiplayer'], item['last_played_at']))
+    if File.empty?('./save_data/game.json')
+      File.write('./save_data/game.json', [])
+    else
+      JSON.parse(File.read('./save_data/game.json')).each do |item|
+        gamess.push(Game.new(item['name'], item['publish_date'], item['multiplayer'], item['last_played_at']))
+      end
     end
     gamess
   end

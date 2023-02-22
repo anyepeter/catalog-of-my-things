@@ -10,7 +10,7 @@ describe Label do
   context 'testing the label class' do
     it 'should return zero since no label exist yet' do
       expect(@label.items.length).to eql 0
-      @item.author(@label)
+      @item.add_label(@label)
       expect(@label.items.length).to eql 1
     end
   end

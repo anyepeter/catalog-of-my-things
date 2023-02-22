@@ -15,8 +15,12 @@ module AuthorLogic
 
   def load_author
     author = []
-    JSON.parse(File.read('./save_data/author.json')).each do |item|
-      author.push(Author.new(item['first_name'], item['last_name']))
+    if File.empty?('./save_data/author.json')
+      File.write('./save_data/author.json', [])
+    else
+      JSON.parse(File.read('./save_data/author.json')).each do |item|
+        author.push(Author.new(item['first_name'], item['last_name']))
+      end
     end
     author
   end

@@ -16,8 +16,12 @@ module MovieLogic
 
   def load_movie
     film = []
-    JSON.parse(File.read('./save_data/movies.json')).each do |item|
-      film.push(Movie.new(item['name'], item['publish_date'], item['silent']))
+    if File.empty?('./save_data/movies.json')
+      File.write('./save_data/movies.json', [])
+    else
+      JSON.parse(File.read('./save_data/movies.json')).each do |item|
+        film.push(Movie.new(item['name'], item['publish_date'], item['silent']))
+      end
     end
     film
   end
