@@ -17,8 +17,6 @@ require_relative './logic/movies_logic'
 require_relative './logic/music_album_logic'
 require_relative './logic/genre_logic'
 
-# rubocop:disable Metrics/MethodLength, Metrics/ClassLength, Metrics/CyclomaticComplexity, Lint/UselessAssignment
-
 class App
   include BookLogic
   include AuthorLogic
@@ -77,7 +75,7 @@ class App
     publisher = gets.chomp
     print 'cover state: '
     cover_state = gets.chomp
-    book = Book.new(title, publish_date = Date.parse(publish_date), publisher, cover_state)
+    book = Book.new(title, Date.parse(publish_date), publisher, cover_state)
     author = Author.new(first_name, last_name)
     @books.push(book)
     @authors << (author)
@@ -110,7 +108,7 @@ class App
     spotify = gets.chomp
     @label << Label.new(title, color)
     on_spotify = spotify.downcase == 'y'
-    @music_album << MusicAlbum.new(title, publish_date = Date.parse(date), on_spotify)
+    @music_album << MusicAlbum.new(title, Date.parse(date), on_spotify)
     puts 'Music album and label created'
     puts ' '
   end
@@ -181,7 +179,7 @@ class App
     end
   end
 
-  def function(option)
+  def list(option)
     case option
     when 1
       list_books
@@ -199,6 +197,11 @@ class App
       list_authors
     when 8
       list_source
+    end
+  end
+
+  def add(option)
+    case option
     when 9
       create_book
     when 10
@@ -210,5 +213,3 @@ class App
     end
   end
 end
-
-# rubocop:enable Metrics/MethodLength, Metrics/ClassLength, Metrics/CyclomaticComplexity, Lint/UselessAssignment
