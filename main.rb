@@ -5,6 +5,7 @@ class Main
         puts ''
         app = App.new
         option = nil
+        app.load_data
         while option != 13 do 
            puts  '1 - List all books'
           puts '2 - List all music albums'
@@ -22,6 +23,7 @@ class Main
           puts ' '
             option = gets.chomp.to_i
             app.function(option)
+            app.save_data
         end
         puts 'thanks for using this app'
     end
