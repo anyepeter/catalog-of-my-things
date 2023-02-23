@@ -1,12 +1,13 @@
 class Source
-    attr_accessor :name, :items
-    def initialize(name)
-        @id = Random.rand(1..1000)
-        @name = name
-        @items = []
-    end
+  attr_accessor :name, :items
 
-    def add_item(item)
-        items << item
-    end
+  def initialize(name)
+    @id = Random.rand(1..1000)
+    @name = name
+    @items = []
+  end
+
+  def add_item(item)
+    items << item
+  end
 end
